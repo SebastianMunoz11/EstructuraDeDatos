@@ -1,0 +1,107 @@
+Clase Aplicacion
+package FiguraGeometrica;
+
+public class Aplicacion {
+
+	public static void main(String[] args) {
+		
+		FiguraGeometrica figura;
+		System.out.println("Areas Figuras Geometricas:\n");
+		figura = new Circulo(5);
+		figura.getClass();
+		System.out.println("Area del Circulo: "+figura.getArea());
+		figura = new Cuadrado(10);
+		figura.getClass();
+		System.out.println("Area del Cuadrado : "+figura.getArea());
+		figura = new Rectangulo(5,2);
+		figura.getClass();
+		System.out.println("Area del Rectangulo: "+figura.getArea());		
+		figura = new Triangulo(10,2);
+		figura.getClass();	
+		System.out.println("Area del Triangulo: "+figura.getArea());
+	}
+}
+
+Clase Circulo
+package FiguraGeometrica;
+
+public class Circulo extends FiguraGeometrica {
+
+	public Circulo(double dato1) {
+		super(dato1);
+    }
+
+@Override
+
+ public double getArea() {
+		return Math.PI*Math.pow(this.dato1, 2);
+ }
+}
+
+Clase Triangulo
+package FiguraGeometrica;
+
+public class Triangulo extends FiguraGeometrica {
+	private double dato2;
+
+	public Triangulo(double dato1, double dato2) {
+		super(dato1);
+		this.dato2 = dato2;
+ }
+
+  public double getDato2() {
+	  return dato2;
+ }
+
+  public void setDato2(double dato2) {
+	  this.dato2 = dato2;
+  }
+
+ @Override
+  public double getArea() {
+	 return (this.dato1*this.dato2)/2;
+ }
+}
+
+
+Clase Cuadrado
+package FiguraGeometrica;
+
+public class Cuadrado extends FiguraGeometrica {
+
+	public Cuadrado(double dato1) {
+		super(dato1);
+ }
+
+ @Override
+ public double getArea() {
+  return Math.pow(this.dato1, 2);
+ }
+}
+
+
+Clase Rectangulo
+package FiguraGeometrica;
+
+public class Rectangulo extends FiguraGeometrica {
+	protected double dato2;
+ 	public Rectangulo(double dato1, double dato2) {
+ 		super(dato1);
+ 		this.dato2 = dato2;
+ }
+
+public double getDato2() {
+	return dato2;
+ }
+ 
+public void setDato2(double dato2) {
+	this.dato2 = dato2;
+ }
+ 
+@Override
+public double getArea() {
+  return this.dato1*this.dato2;
+ }
+}
+
+
